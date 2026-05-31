@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { X, FileText } from "lucide-react";
 import InvoiceForm from "./components/InvoiceForm";
 import InvoicePreview from "./components/InvoicePreview";
 import { downloadPDF } from "./utils/pdfGenerator";
