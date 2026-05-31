@@ -8,14 +8,11 @@ function App() {
   const [invoice, setInvoice] = useState({
     developerName: "Andama",
     invoiceDate: "8/1/2025",
-    chargeCode: "3105",
+    chargeCode: "3100",
     tasks: [
       { name: "Authentication issues", amount: 30000 },
       { name: "Tenant profile issues", amount: 20000 },
       { name: "Tenant & landlord issues", amount: 30000 },
-      { name: "Keyboard handling & fixes", amount: 40000 },
-      { name: "Property engagement fixes", amount: 50000 },
-      { name: "Property management fixes", amount: 60000 },
     ],
     paymentStatus: "Unpaid",
   });
@@ -62,10 +59,10 @@ function App() {
   const totalAmount = invoice.tasks.reduce((sum, task) => sum + task.amount, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 p-6 md:p-10">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 p-6">
+      <div className="max-w-[90%] mx-auto">
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-4">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             Invoice Generator
           </h1>
