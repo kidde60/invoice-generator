@@ -5,7 +5,8 @@ const InvoicePreview = forwardRef(({ invoice, totalAmount }, ref) => {
   return (
     <div
       ref={ref}
-      className="bg-white rounded-2xl p-10 text-gray-900 shadow-2xl border border-gray-100"
+      className="bg-white p-10 text-gray-900"
+      style={{ width: "100%", maxWidth: "800px", margin: "0 auto" }}
     >
       {/* Header */}
       <div className="flex items-center gap-4 mb-10 pb-8 border-b-2 border-gray-200">
@@ -38,10 +39,10 @@ const InvoicePreview = forwardRef(({ invoice, totalAmount }, ref) => {
           {invoice.tasks.map((task, index) => (
             <div
               key={index}
-              className="flex justify-between items-center py-2 px-3 bg-gray-50 rounded-lg hover:bg-blue-50 transition"
+              className="flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition min-h-12"
             >
-              <p className="text-gray-700 font-medium">{task.name}</p>
-              <p className="text-gray-900 font-semibold">
+              <p className="text-gray-700 font-medium flex-1">{task.name}</p>
+              <p className="text-gray-900 font-semibold text-right">
                 {task.amount.toLocaleString()} UGX
               </p>
             </div>
@@ -54,7 +55,7 @@ const InvoicePreview = forwardRef(({ invoice, totalAmount }, ref) => {
         <p className="text-gray-600 text-xs uppercase font-bold tracking-wider mb-3">
           Total Amount Due
         </p>
-        <p className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">
+        <p className="text-5xl font-bold text-blue-600">
           {totalAmount.toLocaleString()} UGX
         </p>
       </div>
