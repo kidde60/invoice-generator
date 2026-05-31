@@ -11,7 +11,7 @@ function InvoiceForm({
   onDownloadPDF,
 }) {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-8 space-y-8">
+    <div className="bg-white rounded-2xl shadow-lg p-8 space-y-4">
       {/* Developer Name */}
       <div>
         <label className="block text-xs font-bold text-gray-600 mb-3 uppercase tracking-wider">
@@ -24,34 +24,33 @@ function InvoiceForm({
           className="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
         />
       </div>
+      <div className="flex gap-4 items-center">
+        {/* Invoice Date */}
+        <div className="w-full">
+          <label className="block text-xs font-bold text-gray-600 mb-3 uppercase tracking-wider">
+            Invoice Date
+          </label>
+          <input
+            type="date"
+            value={invoice.invoiceDate}
+            onChange={(e) => onInputChange("invoiceDate", e.target.value)}
+            className="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+          />
+        </div>
 
-      {/* Invoice Date */}
-      <div>
-        <label className="block text-xs font-bold text-gray-600 mb-3 uppercase tracking-wider">
-          Invoice Date
-        </label>
-        <input
-          type="text"
-          value={invoice.invoiceDate}
-          onChange={(e) => onInputChange("invoiceDate", e.target.value)}
-          className="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          placeholder="MM/DD/YYYY"
-        />
+        {/* Charge Code */}
+        <div className="w-full">
+          <label className="block text-xs font-bold text-gray-600 mb-3 uppercase tracking-wider">
+            Charge
+          </label>
+          <input
+            type="text"
+            value={invoice.chargeCode}
+            onChange={(e) => onInputChange("chargeCode", e.target.value)}
+            className="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+          />
+        </div>
       </div>
-
-      {/* Charge Code */}
-      <div>
-        <label className="block text-xs font-bold text-gray-600 mb-3 uppercase tracking-wider">
-          Charge Code
-        </label>
-        <input
-          type="text"
-          value={invoice.chargeCode}
-          onChange={(e) => onInputChange("chargeCode", e.target.value)}
-          className="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-        />
-      </div>
-
       {/* Tasks */}
       <div>
         <label className="block text-xs font-bold text-gray-600 mb-4 uppercase tracking-wider">
